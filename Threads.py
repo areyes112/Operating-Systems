@@ -4,5 +4,5 @@ import time
 print("This is for threads")
 
 class ProcessManagement:
-    def init(self, name)
+    def init(self, name):
         self.name = name
