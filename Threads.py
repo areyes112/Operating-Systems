@@ -13,3 +13,4 @@ if __name__ == "__main__":
 
     print("This is for threads")
     Process1.printing()
+    Process2.printing()
