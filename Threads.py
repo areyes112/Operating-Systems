@@ -26,7 +26,6 @@ class ProcessManagement:
         print(f"{self.name} is taking a {break_duration} minute break\n")
         for minute in range(break_duration):                                
             print(f"{self.name} - break minute {minute + 1}\n")
-            time.sleep(1) 
         print(f"{self.name} has finished their break and is refreshed!\n")
 
 #Main execution block: Creating processes and managing threads
