@@ -24,7 +24,7 @@ class ProcessManagement:
         print(f"{self.name} is taking a {break_duration} minute break\n")
         for minute in range(break_duration):                                
             print(f"{self.name} - break minute {minute + 1}\n")
-            time.sleep(1)  
+            time.sleep(0.1) 
         print(f"{self.name} has finished their break and is refreshed!\n")
 
 #Main execution block: Creating processes and managing threads
@@ -37,12 +37,16 @@ if __name__ == "__main__":
     thread2 = threading.Thread(target=Process2.printing)
     thread3 = threading.Thread(target=Process1.study)
     thread4 = threading.Thread(target=Process2.study)
+    thread5 = threading.Thread(target=Process1.take_break)
+    thread6 = threading.Thread(target=Process2.take_break)
 
     #Starting threads: Beginning execution of threads
     thread1.start()
     thread2.start()
     thread3.start()
     thread4.start()
+    thread5.start()
+    thread6.start()
 
 
     #Joining threads: Waiting for threads to complete before moving on
@@ -50,5 +54,7 @@ if __name__ == "__main__":
     thread2.join()
     thread3.join()
     thread4.join()
+    thread5.join()
+    thread6.join()
     #Checking if threads are completed
     print("Threading completed")
