@@ -16,6 +16,14 @@ class ProcessManagement:
             time.sleep(self.delay)
         print(f"{self.name} has finished studying")
 
+    def take_break(self):
+        break_duration = 3
+        print(f"{self.name} is taking a {break_duration} minute break")
+        for minute in range(break_duration):                                
+            print(f"{self.name} - break minute {minute + 1}")
+            time.sleep(1)  
+        print(f"{self.name} has finished their break and is refreshed!")
+
 
 if __name__ == "__main__":
     #Variable assignment
