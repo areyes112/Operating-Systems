@@ -8,21 +8,21 @@ class ProcessManagement:
         self.delay = delay
 
     def printing(self):
-        print(self.name, self.SID, self.age)
+        print(self.name, self.SID, self.age, "\n")
 
     def study(self):
         for i in range(5):
-            print(f"{self.name} has studied for {i+1} hours")
+            print(f"{self.name} has studied for {i+1} hours\n")
             time.sleep(self.delay)
-        print(f"{self.name} has finished studying")
+        print(f"{self.name} has finished studying\n")
 
     def take_break(self):
         break_duration = 3
-        print(f"{self.name} is taking a {break_duration} minute break")
+        print(f"{self.name} is taking a {break_duration} minute break\n")
         for minute in range(break_duration):                                
-            print(f"{self.name} - break minute {minute + 1}")
+            print(f"{self.name} - break minute {minute + 1}\n")
             time.sleep(1)  
-        print(f"{self.name} has finished their break and is refreshed!")
+        print(f"{self.name} has finished their break and is refreshed!\n")
 
 
 if __name__ == "__main__":
