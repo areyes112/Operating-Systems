@@ -9,24 +9,27 @@ class ProcessManagement: #Class to manage process details and actions
 
     #Method to print process details
     def printing(self): #Prints the process details
-        print(self.name, self.SID, self.age, "\n") #New line for better readability
+        print(self.name, self.SID, self.age, "\n") 
 
     #Method to simulate studying with delays
     def study(self): 
         for i in range(5): #Simulates studying for 5 hours
-            print(f"{self.name} has studied for {i+1} hours\n") #New line for better readability
+            print(f"{self.name} has studied for {i+1} hours\n") 
             time.sleep(self.delay) #Simulates delay for each hour of study
-        print(f"{self.name} has finished studying\n") #New line for better readability
+        print(f"{self.name} has finished studying\n") 
         
     #Method to simulate taking a break
     def take_break(self):
         # Ensures break starts after some study time
+
+        #This will be removed when "events" are introduced
         time.sleep(6) # Waits for 6 seconds before taking a break
+
         break_duration = 3 # Duration of the break in minutes
-        print(f"{self.name} is taking a {break_duration} minute break\n") #New line for better readability
+        print(f"{self.name} is taking a {break_duration} minute break\n") 
         for minute in range(break_duration): #Simulates each minute of the break                                
-            print(f"{self.name} - break minute {minute + 1}\n") #New line for better readability
-        print(f"{self.name} has finished their break and is refreshed!\n") #New line for better readability
+            print(f"{self.name} - break minute {minute + 1}\n") 
+        print(f"{self.name} has finished their break and is refreshed!\n") 
 
 #Main execution block: Creating processes and managing threads
 if __name__ == "__main__":
