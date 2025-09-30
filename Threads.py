@@ -1,5 +1,9 @@
 import threading 
 import time
+
+printing_done = threading.Event() #Event to signal printing completion
+study_done = threading.Event() #Event to signal studying completion
+
 class ProcessManagement: #Class to manage process details and actions
     def __init__(self, name, SID, age, delay): #Constructor to initialize process attributes
         self.name = name #Attributes for process details
@@ -20,6 +24,7 @@ class ProcessManagement: #Class to manage process details and actions
             time.sleep(self.delay) #Simulates delay for each hour of study
         print(f"{self.name} has finished studying\n") 
         study_done.set() #Signal that studying is done
+    
     #Method to simulate taking a break
     def take_break(self):
         study_done.wait() #Ensures studying is done before taking a break
