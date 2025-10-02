@@ -1,8 +1,6 @@
 import threading 
 import time
 
-printing_done = threading.Event() #Event to signal printing completion
-study_done = threading.Event() #Event to signal studying completion
 
 class ProcessManagement: #Class to manage process details and actions
     def __init__(self, name, SID, age, delay): #Constructor to initialize process attributes
@@ -10,24 +8,29 @@ class ProcessManagement: #Class to manage process details and actions
         self.SID = SID #Attributes for process details
         self.age = age #Attributes for process details
         self.delay = delay #Delay attribute for simulating study time
+        
+        # per-instance events so each process coordinates its own threads
+        self.printing_done = threading.Event()
+        self.study_done = threading.Event()
+        
 
     #Method to print process details
     def printing(self): #Prints the process details
         print(self.name, self.SID, self.age, "\n") 
-        printing_done.set() #Signal that printing is done
+        self.printing_done.set() #Signal that printing is done
 
     #Method to simulate studying with delays
     def study(self): 
-        printing_done.wait() #Ensures printing is done before studying
+        self.printing_done.wait() #Ensures printing is done before studying
         for i in range(5): #Simulates studying for 5 hours
             print(f"{self.name} has studied for {i+1} hours\n") 
             time.sleep(self.delay) #Simulates delay for each hour of study
         print(f"{self.name} has finished studying\n") 
-        study_done.set() #Signal that studying is done
+        self.study_done.set() #Signal that studying is done
     
     #Method to simulate taking a break
     def take_break(self):
-        study_done.wait() #Ensures studying is done before taking a break
+        self.study_done.wait() #Ensures studying is done before taking a break
         break_duration = 3 # Duration of the break in minutes
         print(f"{self.name} is taking a {break_duration} minute break\n") 
         for minute in range(break_duration): #Simulates each minute of the break                                
