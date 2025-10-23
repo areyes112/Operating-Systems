@@ -26,18 +26,26 @@ class StackMath:
 
     def funcC(self):
         print("========== Function C  =========\ \n")
-        print(f"Values in local scope: {self.val_a}, {self.val_b}, {self.val_c}\n")
+        print(f"Values in local scope: {self.val_a}, {self.val_b}, {self.val_c}  | \n")
         print("========== Function C  =========/ \n")
 
     def showHeap(self):
         print(f"Heap reference ID: {id(self.heap_ref)}")
         print(f"Heap contents: {self.heap_ref}")
         print("Changing heap contents...")
-        self.heap_ref[0] = 99   
+        if self.val_a == 1:
+             self.heap_ref[0] = 99
+        else:
+            self.heap_ref[0] = "z"   
         print(f"Heap contents after modification: {self.heap_ref}")
+        print(f"Heap reference ID again: {id(self.heap_ref)}")
         print("Notice how the object itself stayed the same, but its contents changed.\n")
 
 if __name__ == "__main__":
     heap1 = [1, 2, 3]
     StackMathInstance1 = StackMath(*heap1)
     StackMathInstance1.startFunc()
+
+    heap2 = ["a", "b", "c"]
+    StackMathInstance2 = StackMath(*heap2)
+    StackMathInstance2.startFunc()
