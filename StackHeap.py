@@ -15,19 +15,19 @@ class StackMath:
         self.showHeap()
 
     def funcA(self):
-        print("========== Function A Starting ==========\n")
+        print("========== Function A  =======\ \n")
         self.funcB()
-        print("========== Function A Ending ==========\n")
+        print("========== Function A  =======/ \n")
 
     def funcB(self):
-        print("---------- Function B Starting ----------\n")
+        print("========== Function B  ========\ \n")
         self.funcC()
-        print("---------- Function B Ending ----------\n")
+        print("========== Function B  ========/ \n")
 
     def funcC(self):
-        print("########### Function C Starting ###########\n")
+        print("========== Function C  =========\ \n")
         print(f"Values in local scope: {self.val_a}, {self.val_b}, {self.val_c}\n")
-        print("########### Function C Ending ###########\n")
+        print("========== Function C  =========/ \n")
 
     def showHeap(self):
         print(f"Heap reference ID: {id(self.heap_ref)}")
