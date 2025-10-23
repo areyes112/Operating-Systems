@@ -30,15 +30,15 @@ class StackMath: # Demonstrates stack and heap behavior
         print("========== Function C  =========/ \n")
 
     def showHeap(self): # Demonstrates heap behavior
-        print(f"Heap reference ID: {id(self.heap_ref)}")
-        print(f"Heap contents: {self.heap_ref}")
+        print(f"Heap reference ID: {id(self.heap_ref)}") # This calls the memory address of the heap object
+        print(f"Heap contents: {self.heap_ref}") #This shows the contents of the heap object
         print("Changing heap contents...")
         if self.val_a == 1:
              self.heap_ref[0] = 99
         else:
             self.heap_ref[0] = "z"   
         print(f"Heap contents after modification: {self.heap_ref}")
-        print(f"Heap reference ID again: {id(self.heap_ref)}")
+        print(f"Heap reference ID again: {id(self.heap_ref)}") # Shows that the memory address remains the same
         print("Notice how the object itself stayed the same, but its contents changed.\n")
 
 if __name__ == "__main__": # Main execution
