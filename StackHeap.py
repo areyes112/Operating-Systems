@@ -1,5 +1,3 @@
-from heapq import heapify, heappush, heappop   
-
 class StackMath:
     def __init__(self,val_a,val_b,val_c):
         self.val_a = val_a
@@ -27,8 +25,9 @@ if __name__ == "__main__":
 
     heap1 = [1,2,3]
     heap2 = [4,5,6]
-    StackMathInstance1 = StackMath(heap1)
-    StackMathInstance2 = StackMath(heap2)
+
+    StackMathInstance1 = StackMath(*heap1)
+    StackMathInstance2 = StackMath(*heap2)
     StackMathInstance1.func1()
     StackMathInstance2.func1()
     
