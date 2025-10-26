@@ -1,3 +1,6 @@
+import time
+import tracemalloc
+
 class StackMath: # Demonstrates stack and heap behavior
     def __init__(self, val_a, val_b, val_c):
         self.val_a = val_a
@@ -16,21 +19,26 @@ class StackMath: # Demonstrates stack and heap behavior
 
     def funcA(self): # First function in the call stack
         print("========== Function A  =======\ \n")
+        time.sleep(2) # Simulate some processing delay
         self.funcB()
         print("========== Function A  =======/ \n")
 
     def funcB(self): # Second function in the call stack
         print("========== Function B  ========\ \n")
+        time.sleep(2)
         self.funcC()
         print("========== Function B  ========/ \n")
 
     def funcC(self): # Third function in the call stack
         print("========== Function C  =========\ \n")
+        time.sleep(2)
         print(f"Values in local scope: {self.val_a}, {self.val_b}, {self.val_c}  | \n")
         print("========== Function C  =========/ \n")
 
     def showHeap(self): # Demonstrates heap behavior
         print(f"Heap reference ID: {id(self.heap_ref)}") # This calls the memory address of the heap object
+        current, peak = tracemalloc.get_traced_memory()
+        print(f"Current memory usage: {current / 10**6}MB; Peak: {peak / 10**6}MB")
         print(f"Heap contents: {self.heap_ref}") #This shows the contents of the heap object
         print("Changing heap contents...")
         if self.val_a == 1:
@@ -49,3 +57,5 @@ if __name__ == "__main__": # Main execution
     heap2 = ["a", "b", "c"]
     StackMathInstance2 = StackMath(*heap2)
     StackMathInstance2.startFunc()
+
+tracemalloc.stop()
