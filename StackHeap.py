@@ -42,8 +42,8 @@ class StackMath: # Demonstrates stack and heap behavior
 
     def showHeap(self): # Demonstrates heap behavior
         print(f"Heap reference ID: {id(self.heap_ref)}") # This calls the memory address of the heap object
-        current, peak = tracemalloc.get_traced_memory()
-        print(f"Current memory usage: {current / 10**6}MB; Peak: {peak / 10**6}MB")
+        current, peak = tracemalloc.get_traced_memory() # Get current and peak memory usage
+        print(f"Current memory usage: {current / 10**6}MB; Peak: {peak / 10**6}MB") # Display memory usage
         print(f"Heap contents: {self.heap_ref}") #This shows the contents of the heap object
         print("Changing heap contents...")
         if self.val_a == 1:
