@@ -79,7 +79,7 @@ if __name__ == "__main__": # Main execution
     snapshot_main2 = tracemalloc.take_snapshot()  # take another after creating second instance
     stats_main1 = snapshot_main1.compare_to(snapshot_main2, 'lineno')
     stats_main1 = [stat for stat in stats_main1 if "StackHeap.py" in str(stat.traceback)]
-    print("\n=== Memory Allocation Stats After First Instance ===\n")
+    print("\n=== Memory Allocation Stats After Running Main ===\n")
     for stat in stats_main1[:5]:
         print(stat)
 
