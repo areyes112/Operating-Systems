@@ -1,6 +1,8 @@
 import time
 import tracemalloc
 
+tracemalloc.start() # Start tracing memory allocations
+
 class StackMath: # Demonstrates stack and heap behavior
     def __init__(self, val_a, val_b, val_c):
         self.val_a = val_a
@@ -55,6 +57,8 @@ class StackMath: # Demonstrates stack and heap behavior
         print("Notice how the object itself stayed the same, but its contents changed.\n")
 
 if __name__ == "__main__": # Main execution
+
+    snapshot_main1 = tracemalloc.take_snapshot()  # take a snapshot before creating instances
     heap1 = [1, 2, 3]
     StackMathInstance1 = StackMath(*heap1)
     StackMathInstance1.startFunc()
@@ -62,5 +66,11 @@ if __name__ == "__main__": # Main execution
     heap2 = ["a", "b", "c"]
     StackMathInstance2 = StackMath(*heap2)
     StackMathInstance2.startFunc()
+    snapshot_main2 = tracemalloc.take_snapshot()  # take another after creating second instance
+    stats_main1 = snapshot_main1.compare_to(snapshot_main2, 'lineno')
+    stats_main1 = [stat for stat in stats_main1 if "StackHeap.py" in str(stat.traceback)]
+    print("\n=== Memory Allocation Stats After First Instance ===\n")
+    for stat in stats_main1[:5]:
+        print(stat)
 
 tracemalloc.stop()
