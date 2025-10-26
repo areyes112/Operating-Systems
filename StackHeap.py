@@ -15,6 +15,7 @@ class StackMath: # Demonstrates stack and heap behavior
         time.sleep(1)
         print("\n=== Stack Unwinding Complete ===\n")
 
+        time.sleep(1)
         print("\n=== Demonstrating Heap (Memory Storage) Behavior ===\n")
         self.showHeap()
 
