@@ -12,6 +12,7 @@ class StackMath: # Demonstrates stack and heap behavior
     def startFunc(self): # Initiates the stack demonstration
         print("\n=== Demonstrating Stack (FILO) Behavior ===\n")
         self.funcA()
+        time.sleep(1)
         print("\n=== Stack Unwinding Complete ===\n")
 
         print("\n=== Demonstrating Heap (Memory Storage) Behavior ===\n")
@@ -19,20 +20,23 @@ class StackMath: # Demonstrates stack and heap behavior
 
     def funcA(self): # First function in the call stack
         print("========== Function A  =======\ \n")
-        time.sleep(2) # Simulate some processing delay
+        time.sleep(1) # Simulate some processing delay
         self.funcB()
+        time.sleep(1)
         print("========== Function A  =======/ \n")
 
     def funcB(self): # Second function in the call stack
         print("========== Function B  ========\ \n")
-        time.sleep(2)
+        time.sleep(1)
         self.funcC()
+        time.sleep(1)
         print("========== Function B  ========/ \n")
 
     def funcC(self): # Third function in the call stack
         print("========== Function C  =========\ \n")
-        time.sleep(2)
+        time.sleep(1)
         print(f"Values in local scope: {self.val_a}, {self.val_b}, {self.val_c}  | \n")
+        time.sleep(1)
         print("========== Function C  =========/ \n")
 
     def showHeap(self): # Demonstrates heap behavior
