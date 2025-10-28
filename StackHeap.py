@@ -12,7 +12,7 @@ class StackMath: # Demonstrates stack and heap behavior
         self.heap_ref = [val_a, val_b, val_c]
 
     def startFunc(self): # Initiates the stack demonstration
-        print("\n=== Demonstrating Stack (FILO) Behavior ===\n")
+        print("\n=== Demonstrating Stack (LIFO) Behavior ===\n")
         self.funcA()
         time.sleep(1)
         print("\n=== Stack Unwinding Complete ===\n")
