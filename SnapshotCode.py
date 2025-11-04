@@ -22,7 +22,7 @@ while True:
     elif mode == 'grayscale':
         processed = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
     elif mode == 'gaussian':
-        processed = cv.GaussianBlur(frame, (15, 15), 0)
+        processed = cv.GaussianBlur(frame, (45, 45), 0)
 
     # Display result
     cv.imshow('Webcam Filters', processed)
