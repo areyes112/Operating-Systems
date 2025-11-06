@@ -11,7 +11,7 @@ mode = 'regular'
 print("Press 'r' for regular, 'g' for grayscale, 'b' for Gaussian blur, 'q' to quit.")
 
 while True:
-    ret, frame = cap.read()
+    ret, frame = cap.read() 
     if not ret:
         print("Can't receive frame. Exiting ...")
         break
@@ -23,12 +23,13 @@ while True:
         processed = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
     elif mode == 'gaussian':
         processed = cv.GaussianBlur(frame, (45, 45), 0)
-
+    elif mode == 'HSV':
+        processed = cv.cvtColor(frame, cv.COLOR_BGR2HSV)
     # Display result
     cv.imshow('Webcam Filters', processed)
 
     # Check for key presses
-    key = cv.waitKey(1) & 0xFF
+    key = cv.waitKey(1) 
     if key == ord('q'):
         print("Exiting...")
         break
@@ -41,6 +42,9 @@ while True:
     elif key == ord('b'):
         mode = 'gaussian'
         print("Switched to Gaussian Blur mode")
+    elif key == ord('h'):
+        mode = 'HSV'
+        print("Switched to HSV mode")
 
 # Release resources
 cap.release()
