@@ -20,3 +20,9 @@ else:
     print("-" * 110)
     for row in data[:150]:  
         print("{:<12} {:<12} {:<12} {:<18} {:<25} {:<15} {:<6} {:<8}".format(*row))
+
+file_to_delete = "people.txt"
+file_path_to_delete = os.path.join(documents_dir, file_to_delete)
+if os.path.exists(file_path_to_delete):
+    os.remove(file_path_to_delete)
+    print(f"\n🗑️  Deleted file: {file_path_to_delete}")
