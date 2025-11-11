@@ -25,4 +25,4 @@ file_to_delete = "people.txt"
 file_path_to_delete = os.path.join(documents_dir, file_to_delete)
 if os.path.exists(file_path_to_delete):
     os.remove(file_path_to_delete)
-    print(f"\n🗑️  Deleted file: {file_path_to_delete}")
+    print(f"\n Deleted file: {file_path_to_delete}")
