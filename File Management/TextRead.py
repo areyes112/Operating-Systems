@@ -6,7 +6,7 @@ file_path = os.path.join(documents_dir, "people.txt")
 
 # --- Read and print data ---
 if not os.path.exists(file_path):
-    print("❌ File not found. Run create_file.py first.")
+    print("File not found. Run create_file.py first.")
 else:
     with open(file_path, mode='r', encoding='utf-8') as file:
         lines = file.readlines()
