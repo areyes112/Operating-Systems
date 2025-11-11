@@ -9,7 +9,7 @@ file_path = os.path.join(documents_dir, "people.txt")
 
 # --- Append 50 more records ---
 if not os.path.exists(file_path):
-    print("❌ File not found. Run create_file.py first.")
+    print("File not found. Run create_file.py first.")
 else:
     with open(file_path, mode='a', encoding='utf-8') as file:
         for _ in range(50):
@@ -26,4 +26,4 @@ else:
             line = ",".join(record) + "\n"
             file.write(line)
 
-    print(f"✅ Appended 50 records to {file_path}.")
+    print(f"Appended 50 records to {file_path}.")
