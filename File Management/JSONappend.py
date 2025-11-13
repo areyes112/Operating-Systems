@@ -32,4 +32,3 @@ else:
         json.dump(records, file, indent=4)
 
     print(f"Appended 50 records to {file_path}. Total now: {len(records)}.")
-
