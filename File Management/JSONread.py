@@ -31,6 +31,10 @@ else:
 
 file_to_delete = "people.json"
 file_path_to_delete = os.path.join(documents_dir, file_to_delete)
+print(f"Checking for: {file_path_to_delete}")  # <-- Add this
+
 if os.path.exists(file_path_to_delete):
     os.remove(file_path_to_delete)
-    print(f"\n Deleted file: {file_path_to_delete}")
+    print(f"\nDeleted file: {file_path_to_delete}")
+else:
+    print("File not found — could not delete.")
