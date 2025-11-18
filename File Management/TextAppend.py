@@ -17,7 +17,7 @@ else:
                 fake.first_name(),
                 fake.last_name(),
                 fake.date_of_birth(minimum_age=18, maximum_age=90).strftime("%Y-%m-%d"),
-                fake.phone_number(),
+                fake.numerify('##########'),
                 fake.street_address(),
                 fake.city(),
                 fake.state_abbr(),

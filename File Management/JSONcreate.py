@@ -17,7 +17,7 @@ for _ in range(100):
         "first_name": fake.first_name(),
         "last_name": fake.last_name(),
         "date_of_birth": fake.date_of_birth(minimum_age=18, maximum_age=90).strftime("%Y-%m-%d"),
-        "phone": fake.phone_number(),
+        "phone": fake.numerify('##########'),
         "street": fake.street_address(),
         "city": fake.city(),
         "state": fake.state_abbr(),
