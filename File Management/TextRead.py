@@ -16,10 +16,10 @@ else:
 
     print(f"\n📄 Loaded {len(data)} records from: {file_path}\n")
     header = ["First Name", "Last Name", "Date of Birth", "Phone", "Street", "City", "State", "Zip"]
-    print("{:<12} {:<12} {:<12} {:<18} {:<25} {:<15} {:<6} {:<8}".format(*header))
+    print("{:<12} {:<12} {:<16} {:<15} {:<35} {:<18} {:<6} {:<8}".format(*header))
     print("-" * 110)
     for row in data[:150]:  
-        print("{:<12} {:<12} {:<12} {:<18} {:<25} {:<15} {:<6} {:<8}".format(*row))
+        print("{:<12} {:<12} {:<16} {:<15} {:<35} {:<18} {:<6} {:<8}".format(*row))
 
 file_to_delete = "people.txt"
 file_path_to_delete = os.path.join(documents_dir, file_to_delete)
