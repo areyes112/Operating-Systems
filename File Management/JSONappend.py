@@ -10,7 +10,7 @@ file_path = os.path.join(documents_dir, "people.json")
 
 # --- Append 50 new records ---
 if not os.path.exists(file_path):
-    print("File not found. Run create_json.py first.")
+    print("File not found. Run JSONcreate.py first.")
 else:
     with open(file_path, mode='r', encoding='utf-8') as file:
         records = json.load(file)
